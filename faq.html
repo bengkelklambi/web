@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Toko Baju</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Style umum */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: wheat;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* FAQ Section */
+        .faq-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: black;
+        }
+
+        .card-header {
+            background-color: #A2CA71;
+            color: black;
+        }
+
+        .card-body {
+            background-color: white;
+        }
+        
+        .footer {
+            background-color: #A2CA71;
+            color: black;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .navbar {
+            background-color: #A2CA71;
+            color: black;
+        }
+
+        .navbar-brand img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        
+        .language-selector {
+            margin: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: black;">
+                <img src="Bengkel Klambi.jpg" alt="Logo"> Bengkel Klambi Shop
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html"><i class="fas fa-home" style="color: black;"></i> <span data-translate="home" style="color: black;">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="about">About Us</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="best products">Best Seller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kategori.html" style="color: black;" data-translate="categories">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="contact">Contact</a>
+                    </li>
+                    <!-- Language Selector -->
+    <div class="container language-selector">
+        <label for="languageSelector" data-translate="tj">Select Language:</label>
+        <select id="languageSelector" class="form-control w-50 mx-auto">
+            <option value="en"> English</option>
+            <option value="id">Bahasa Indonesia</option>
+        </select>
+    </div>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <!-- FAQ Section -->
+    <div class="container my-5">
+        <h2 class="faq-header" data-translate="faq-title">Frequently Asked Questions (FAQ)</h2>
+
+        <div class="accordion" id="faqAccordion">
+
+            <!-- FAQ 1 -->
+            <div class="card">
+                <div class="card-header" id="faqHeading-1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-black" type="button" data-toggle="collapse" data-target="#faqCollapse-1" aria-expanded="true" aria-controls="faqCollapse-1">
+                            <span data-translate="faq1-question" style="color: black;">What is Koko Shirt?</span>
+                        </button>
+                    </h5>
+                </div>
+                <div id="faqCollapse-1" class="collapse show" aria-labelledby="faqHeading-1" data-parent="#faqAccordion">
+                    <div class="card-body" data-translate="faq1-answer">
+                        Koko Shirt is a modern and elegant shirt suitable for both formal and casual events.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ 2 -->
+            <div class="card">
+                <div class="card-header" id="faqHeading-2">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed text-black" type="button" data-toggle="collapse" data-target="#faqCollapse-2" aria-expanded="false" aria-controls="faqCollapse-2">
+                            <span data-translate="faq2-question" style="color: black;">Are there sizes available for children?</span>
+                        </button>
+                    </h5>
+                </div>
+                <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#faqAccordion">
+                    <div class="card-body" data-translate="faq2-answer">
+                        Yes, we provide various sizes of shirts for children, from toddlers to teenagers.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="card">
+                <div class="card-header" id="faqHeading-3">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed text-black" type="button" data-toggle="collapse" data-target="#faqCollapse-3" aria-expanded="false" aria-controls="faqCollapse-3">
+                            <span data-translate="faq3-question" style="color: black;">How can I order products from the clothing store?</span>
+                        </button>
+                    </h5>
+                </div>
+                <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#faqAccordion">
+                    <div class="card-body" data-translate="faq3-answer">
+                        You can order our products online through this website. Simply choose the product you want, add it to your cart, and proceed with payment using the available methods.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="card">
+                <div class="card-header" id="faqHeading-4">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed text-black" type="button" data-toggle="collapse" data-target="#faqCollapse-4" aria-expanded="false" aria-controls="faqCollapse-4">
+                            <span data-translate="faq4-question" style="color: black;">ADoes the clothing store offer international shipping?</span>
+                        </button>
+                    </h5>
+                </div>
+                <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#faqAccordion">
+                    <div class="card-body" data-translate="faq4-answer">
+                        Currently, we only offer domestic shipping. However, we are working on providing international shipping soon.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2 data-translate="contact-title">Contact Us</h2>
+            <p data-translate="contact-text">Have any questions? Feel free to reach out to us!</p>
+            <a href="tel:+6283152237614">Phone</a>
+            <a href="mailto:bengkelklambimamaaul@gmail.com" data-translate="email">email</a>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bengkel Klambi Shop. All rights reserved.</p>
+            <p>
+                <a href="https://www.facebook.com/maulia.rahman.1420?mibextid=ZbWKwL" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/DeathNo46145706?t=pFdA8w8pWZ1g4fwjyoQ2Qw&s=09" class="text-light"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/aauliarhmn_/" class="text-light"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const translations = {
+            en: {
+                "home": "Home",
+                "about": "About Us",
+                "faq-title": "Frequently Asked Questions (FAQ)",
+                "faq1-question": "What is Koko Shirt?",
+                "best products": "Best Seller",
+                "faq1-answer": "Koko Shirt is a modern and elegant shirt suitable for both formal and casual events.",
+                "faq2-question": "Are there sizes available for children?",
+                "faq2-answer": "Yes, we provide various sizes of shirts for children, from toddlers to teenagers.",
+                "faq3-question": "How can I order products from the clothing store?",
+                "faq3-answer": "You can order our products online through this website. Simply choose the product you want, add it to your cart, and proceed with payment using the available methods.",
+                "faq4-question": "Does the clothing store offer international shipping?",
+                "phone":"Phone",
+                "email":"email",
+                "categories":"Categories",
+                "contact": "Contact",
+                "tj":"Select Language:",
+                "contact-title": "Contact Us",
+                "contact-text": "Have any questions? Feel free to reach out to us!",
+                "faq4-answer": "Currently, we only offer domestic shipping. However, we are working on providing international shipping soon."
+                
+            },
+            id: {
+                "home": "Beranda",
+                "about": "Tentang Kami",
+                "faq-title": "Pertanyaan yang Sering Diajukan (FAQ)",
+                "best products": "Terlaris",
+                "faq1-question": "Apa yang dimaksud dengan Koko Shirt?",
+                "faq1-answer": "Koko Shirt adalah baju koko dengan desain modern dan elegan yang cocok digunakan pada acara formal maupun non-formal.",
+                "faq2-question": "Apakah tersedia ukuran untuk anak-anak?",
+                "faq2-answer": "Ya, kami menyediakan berbagai ukuran baju untuk anak-anak, dari balita hingga remaja.",
+                "faq3-question": "Bagaimana cara memesan produk di Toko Baju?",
+                "faq3-answer": "Anda dapat memesan produk kami secara online melalui website ini. Cukup pilih produk yang Anda inginkan, tambahkan ke keranjang belanja, dan lakukan pembayaran melalui metode yang tersedia.",
+                "faq4-question": "Apakah Toko Baju menyediakan pengiriman internasional?",
+                "phone":"Telepon",
+                "email":"email",
+                "categories":"Kategori",
+                "contact": "Kontak",
+                "tj":"Pilih Bahasa:",
+                "contact-title": "Kontak Kami",
+                "contact-text": "Ada pertanyaan? Jangan ragu untuk menghubungi kami!",
+                "faq4-answer": "Saat ini kami hanya menyediakan pengiriman dalam negeri. Namun, kami sedang dalam proses untuk menyediakan pengiriman internasional dalam waktu dekat."
+            }
+        };
+
+        document.getElementById('languageSelector').addEventListener('change', function() {
+            const lang = this.value;
+            translatePage(lang);
+        });
+
+        function translatePage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                element.innerText = translations[lang][key] || key;
+            });
+        }
+    </script>
+</body>
+</html>

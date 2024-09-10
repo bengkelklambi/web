@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Example</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .product-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #A2CA71;
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .product-item h5 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        .product-item .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 10px;
+        }
+        .product-item .rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        .product-item .btn {
+            margin: 5px;
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .jumbotron {
+            background-color: #A2CA71;
+            padding: 2rem 1rem;
+            text-align: center;
+            color: black;
+        }
+        .navbar .badge {
+            background-color: #A2CA71;
+            color: black;
+        }
+        .navbar {
+            background-color: #A2CA71;
+            color: cyan;
+        }
+        .cart-icon, .login-icon {
+            color: white;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        body {
+            background-color: wheat;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-brand img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        .footer {
+            background-color: #A2CA71;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .language-selector {
+            margin: 10px 0;
+        }
+        .search-bar {
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: black;">
+                <img src="Bengkel Klambi.jpg" alt="Logo"> Bengkel Klambi Shop
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html"><i class="fas fa-home" style="color: black;"></i> <span data-translate="home" style="color: black;">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="about">About Us</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="best products">Best Seller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="products">product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cart-icon" style="color: black;"><i class="fas fa-shopping-cart"></i> <span data-translate="cart">Cart</span> <span class="badge badge-light">0</span></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html" style="color: black;" data-translate="faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kategori.html" style="color: black;" data-translate="categories">Categories</a>
+                    </li>
+                    <!-- Language Selector -->
+    <div class="container text-center language-selector">
+        <label for="languageSelector" style="color: black;" data-translate="tj">Select Language:</label>
+        <select id="languageSelector" class="form-control w-50 mx-auto">
+            <option value="en">English</option>
+            <option value="id">Bahasa Indonesia</option>
+        </select>
+    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <!-- Search Bar -->
+     <div class="container search-bar">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search for products...">
+        <div id="searchResults" class="mt-3"></div>
+    </div>
+
+     <!-- Product Section -->
+     <div class="container py-5" id="produk">
+        <h2 class="text-center mb-4" data-translate="products-title">Our Products</h2>
+        <div class="row">
+            <!-- produk1 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="produk1ko.jpg" class="img-fluid" alt="Casual Shirt">
+                    <h5 data-translate="product1-title">embroidery Koko</h5>
+                    <p data-translate="product1-description">This elegant koko features intricate embroidery, perfect for any formal occasion.</p>
+                    <p class="price" data-translate="harga-produk1">$8.91</p>
+                    <p class="rating">★★★★☆ (4.4)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- produk2 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="produk2ko.jpg" class="img-fluid" alt="Shirt">
+                    <h5 data-translate="product2-title">Printing Koko</h5>
+                    <p data-translate="product2-description">This koko printing shirt offers a modern twist on traditional design, perfect for making a bold statement.</p>
+                    <p class="price" data-translate="harga-produk2">$12.73</p>
+                    <p class="rating">★★★★★ (5.0)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- produk3 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="KokoShopee.jpg" class="img-fluid" alt="Kebaya">
+                    <h5 data-translate="product3-title">Kurta koko</h5>
+                    <p data-translate="product3-description">Embrace the classic charm of the kurta with this elegant koko shirt, perfect for traditional and modern occasions alike.</p>
+                    <p class="price" data-translate="harga-produk3">$2.54</p>
+                    <p class="rating">★★★★★ (5.0)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+             <!-- produk4 -->
+             <div class="col-md-4">
+                <div class="product-item">
+                    <img src="produk4ko.jpg" class="img-fluid" alt="Koko Shirt">
+                    <h5 data-translate="product4-title">slim fit koko</h5>
+                        <p data-translate="product4-description">Our slim fit koko shirt offers a streamlined design that combines traditional elegance with modern sophistication.</p>
+                    <p class="price" data-translate="harga-produk4">$12.73</p>
+                    <p class="rating" >★★★★☆ (4.9)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- produk5 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="produk5ko.jpg" class="img-fluid" alt="Shirt">
+                    <h5 data-translate="product5-title">Batik Koko</h5>
+                    <p data-translate="product5-description">Designed with meticulous attention to detail, this koko shirt offers unparalleled comfort and style.</p>
+                    <p class="price" data-translate="harga-produk5">$8,85</p>
+                    <p class="rating">★★★★★ (5.0)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- produk6 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="produk6ko.jpg" class="img-fluid" alt="Kebaya">
+                    <h5 data-translate="product6-title">Zip Koko</h5>
+                    <p data-translate="product6-description">The perfect blend of tradition and modernity, this koko shirt is a versatile addition to any wardrobe.</p>
+                    <p class="price" data-translate="harga-produk6">$8.73</p>
+                    <p class="rating">★★★★☆ (4.8)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2 data-translate="contact-title">Contact Us</h2>
+            <p data-translate="contact-text">Have any questions? Feel free to reach out to us!</p>
+            <a href="tel:+6283152237614">Phone</a>
+            <a href="mailto:bengkelklambimamaaul@gmail.com" data-translate="email">email</a>
+            
+        </div>
+    </section>
+
+    
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+        <p style="color: black;">&copy; 2024 Bengkel Klambi. All rights reserved.</p>
+        <p>
+            <a href="https://www.facebook.com/maulia.rahman.1420?mibextid=ZbWKwL" class="text-light"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/DeathNo46145706?t=pFdA8w8pWZ1g4fwjyoQ2Qw&s=09" class="text-light"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/aauliarhmn_/" class="text-light"><i class="fab fa-instagram"></i></a>
+        </p>
+    </div>
+</footer>
+
+
+
+
+
+    <!-- Shopping Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul id="cart-items" class="list-group">
+                    <!-- Cart items will be dynamically inserted here -->
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let cart = [];
+        const cartIcon = document.getElementById('cart-icon');
+        const cartItems = document.getElementById('cart-items');
+
+        // Update cart count
+        function updateCartCount() {
+            const cartCount = cart.length;
+            cartIcon.querySelector('.badge').textContent = cartCount;
+        }
+
+        // Add item to cart
+        function addToCart(item) {
+            cart.push(item);
+            updateCartCount();
+            renderCartItems();
+        }
+
+        // Render cart items in the modal
+        function renderCartItems() {
+            cartItems.innerHTML = '';
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.textContent = item;
+                const removeButton = document.createElement('button');
+                removeButton.className = 'btn btn-danger btn-sm';
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = () => {
+                    cart.splice(index, 1);
+                    updateCartCount();
+                    renderCartItems();
+                };
+                li.appendChild(removeButton);
+                cartItems.appendChild(li);
+            });
+        }
+
+        // Attach event listeners to "Add to Cart" buttons
+        document.querySelectorAll('.add-to-cart').forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const productName = button.parentElement.querySelector('h5').textContent;
+                addToCart(productName);
+            });
+        });
+
+        // Show cart modal when clicking the cart icon
+        cartIcon.addEventListener('click', () => {
+            $('#cartModal').modal('show');
+        });
+        const translations = {
+            en: {
+                "home": "Home",
+                "about": "About Us",
+                "review": "Review",
+                "best products": "Best Seller",
+                "contact": "Contact",
+                "cart": "Cart",
+                "login": "Login/Register",
+                "faq": "FAQ",
+                "about-title": "About Us",
+                "about-text": "We are a leading clothing company providing high-quality fashion for all occasions. Our mission is to make you look and feel your best.",
+                "products-title": "Our Products",
+                "product1-title": "embroidery Koko",
+                "product1-description": "This elegant koko features intricate embroidery, perfect for any formal occasion.",
+                "product2-title": "Printing Koko",
+                "product2-description": "This koko printing shirt offers a modern twist on traditional design, perfect for making a bold statement.",
+                "product3-title": "Kurta Koko",
+                "product3-description": "Embrace the classic charm of the kurta with this elegant koko shirt, perfect for traditional and modern occasions alike.",
+                "product4-title": "Slim Fit Koko",
+                "product4-description":"Our slim fit koko shirt offers a streamlined design that combines traditional elegance with modern sophistication.",
+                "product5-title": "Batik Koko",
+                "product5-description":"Designed with meticulous attention to detail, this koko shirt offers unparalleled comfort and style.",
+                "product6-title": "Zip Koko",
+                "product6-description":"The perfect blend of tradition and modernity, this koko shirt is a versatile addition to any wardrobe.",
+                "shop": "Shop",
+                "add-to-cart": "Add to Cart",
+                "contact-title": "Contact Us",
+                "contact-text": "Have any questions? Feel free to reach out to us!",
+                "email": "email",
+                "login-title": "Login / Register",
+                "username": "Username",
+                "password": "Password",
+                "login-button": "Login",
+                "harga-produk1":"$8.91",
+                "harga-produk2":"$12.73",
+                "harga-produk3":"$2.54",
+                "harga-produk4":"$12.73",
+                "harga-produk5":"$8,85",
+                "harga-produk6":"$8.73",               
+                "best products":"best products",
+                "categories":"Categories",
+                "tj":"Select Language:",
+                "register": "Don't have an account? Register here"
+            },
+            id: {
+                "home": "Beranda",
+                "about": "Tentang Kami",
+                "review": "Ulasan",
+                "products": "Produk",
+                "contact": "Kontak",
+                "cart": "Keranjang",
+                "login": "Masuk/Daftar",
+                "faq": "FAQ",
+                "about-title": "Tentang Kami",
+                "about-text": "Kami adalah perusahaan pakaian terkemuka yang menyediakan fashion berkualitas tinggi untuk semua kesempatan. Misi kami adalah membuat Anda tampil dan merasa terbaik.",
+                "products-title": "Produk Kami",
+                "product1-title": "Koko Bordir",
+                "product1-description": "Koko elegan ini menampilkan bordir yang rumit, sempurna untuk acara formal apa pun.",
+                "product2-title": "Koko Printing",
+                "product2-description": "Koko printing ini menawarkan sentuhan modern pada desain tradisional, sempurna untuk membuat pernyataan berani.",
+                "product3-title": "Koko Kurta",
+                "product3-description": "Rasakan pesona klasik kurta dengan koko elegan ini, sempurna untuk acara tradisional dan modern.",
+                "product4-title": "Koko Slim Fit",
+                "product4-description":"Koko slim fit kami menawarkan desain ramping yang menggabungkan keanggunan tradisional dengan kecanggihan modern.",
+                "product5-title": "Koko Batik",
+                "product5-description":"Dirancang dengan perhatian cermat terhadap detail, koko ini menawarkan kenyamanan dan gaya yang tak tertandingi.",
+                "product6-title": "Koko Zip",
+                "product6-description":"Perpaduan sempurna antara tradisi dan modernitas, koko ini adalah tambahan serbaguna untuk setiap lemari pakaian.",
+                "shop": "Belanja",
+                "add-to-cart": "Tambahkan ke Keranjang",
+                "contact-title": "Kontak Kami",
+                "contact-text": "Punya pertanyaan? Jangan ragu untuk menghubungi kami!",
+                "email": "email",
+                "login-title": "Masuk / Daftar",
+                "username": "Nama Pengguna",
+                "password": "Kata Sandi",
+                "login-button": "Masuk",
+                "best products":"Terlaris",
+                "harga-produk1":"$139.900",
+                "harga-produk2":"$199.900",
+                "harga-produk3":"$39.900",
+                "harga-produk4":"$199.900",
+                "harga-produk5":"$139.000",
+                "harga-produk6":"$137.000",   
+                "categories":"Kategori",
+                "tj":"Pilih Bahasa:",
+                "register": "Belum punya akun? Daftar di sini"
+            }
+        };
+
+        document.getElementById('languageSelector').addEventListener('change', function() {
+            const lang = this.value;
+            translatePage(lang);
+        });
+
+        function translatePage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                element.innerText = translations[lang][key] || key;
+            });
+        }
+        const products = [
+    
+        {
+                title: "embroidery Koko",
+                description: "This elegant koko features intricate embroidery, perfect for any formal occasion.",
+                image: "produk1ko.jpg",
+                price: "$8.91",
+                rating: "★★★★☆ (4.4)",
+                link: "https://shopee.co.id/Baju-Koko-Bordir-Lengan-Panjang-Dewasa-Alfaan-model-terbaru-jubah-pria-muslim-koko-panjang-Alzan-i.123778269.5832926079",
+            
+            },
+    
+           {
+                title: "slim fit koko",
+                description: "Our slim fit koko shirt offers a streamlined design that combines traditional elegance with modern sophistication.",
+                image: "produk4ko.jpg",
+                price: "$12.73",
+                rating:"★★★★☆ (4.9)",
+                link: "https://shopee.co.id/Jubah-Slimfit-Gamis-Jubah-Pria-Jubah-pria-muslim-pria-busana-muslim-jubba-alfaan-jubah-Alzan-hitam-jubah-putih-jubah-gamis-saudi-i.123778269.22366635113",
+           },
+          
+            ];
+            document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const results = products.filter(product => product.title.toLowerCase().includes(query) || product.description.toLowerCase().includes(query));
+            displaySearchResults(results);
+        });
+        function displaySearchResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = '';
+            if (results.length > 0) {
+                results.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product-item');
+                    productElement.innerHTML = `
+                        <img src="${product.image}" alt="${product.title}">
+                        <h5>${product.title}</h5>
+                       <p>${product.description}></p>
+                        <p>${product.price}</p>
+                        <p>${product.rating}</p>
+                        <a href="${product.link}" target="_blank">Shop</a>
+                        <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                    `;
+                    
+                    resultsContainer.appendChild(productElement);
+                });
+            } else {
+                resultsContainer.innerHTML = '<p>No results found</p>';
+            }
+        }
+
+    </script>
+</body>
+</html>

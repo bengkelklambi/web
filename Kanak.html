@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Example</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .product-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #A2CA71;
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .product-item h5 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        .product-item .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 10px;
+        }
+        .product-item .rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        .product-item .btn {
+            margin: 5px;
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .jumbotron {
+            background-color: #A2CA71;
+            padding: 2rem 1rem;
+            text-align: center;
+            color: black;
+        }
+        .navbar .badge {
+            background-color: #A2CA71;
+            color: black;
+        }
+        .navbar {
+            background-color: #A2CA71;
+            color: cyan;
+        }
+        .cart-icon, .login-icon {
+            color: white;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        body {
+            background-color: wheat;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-brand img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        .footer {
+            background-color: #A2CA71;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .language-selector {
+            margin: 10px 0;
+        }
+        .search-bar {
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: black;">
+                <img src="Bengkel Klambi.jpg" alt="Logo"> Bengkel Klambi Shop
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html"><i class="fas fa-home" style="color: black;"></i> <span data-translate="home" style="color: black;">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="review">Review</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="best products">best Seller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="products">Our Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cart-icon" style="color: black;"><i class="fas fa-shopping-cart"></i> <span data-translate="cart">Cart</span> <span class="badge badge-light">0</span></a>
+                    </li>
+                 
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html" style="color: black;" data-translate="faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kategori.html" style="color: black;" data-translate="categories">Categories</a>
+                    </li>
+                    <!-- Language Selector -->
+    <div class="container text-center language-selector">
+        <label for="languageSelector" style="color: black;" data-translate="tj">Select Language:</label>
+        <select id="languageSelector" class="form-control w-50 mx-auto">
+            <option value="en">English</option>
+            <option value="id">Bahasa Indonesia</option>
+        </select>
+    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Search Bar -->
+   <div class="container search-bar">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search for products...">
+    <div id="searchResults" class="mt-3"></div>
+</div>
+
+
+    <!-- Product Section -->
+    <div class="container py-5" id="produk">
+        <h2 class="text-center mb-4" data-translate="products-title">Our Products</h2>
+        <div class="row">
+            <!-- produk1 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="superman.jpg" class="img-fluid" alt="Koko Shirt">
+                    <h5 data-translate="product1-title">RAINBOW SET / SET OF BOYS' CLOTHING SET 1-7 YEARS SUPERH</h5>
+                    <p data-translate="product1-description">Adorable and comfy clothing for your little ones.</p>
+                    <p class="price" data-translate="harga-produk1">$49.99</p>
+                    <p class="rating">★★★★★ (5.0)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- produk2 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="produk2ka.jpg" class="img-fluid" alt="Shirt">
+                    <h5 data-translate="product2-title">Outbox Fashion Unisex Honey Children's Suit</h5>
+                    <p data-translate="product1-description">Adorable and comfy clothing for your little ones.</p>
+                    <p class="price" data-translate="harga-produk2">$29.99</p>
+                    <p class="rating">★★★★☆ (4.7)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- produk3 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="shopee.jpg" class="img-fluid" alt="Kebaya">
+                    <h5 data-translate="product3-title">Special Children's T-shirt Independence 17 August</h5>
+                    <p data-translate="product1-description">Adorable and comfy clothing for your little ones.</p>
+                    <p class="price" data-translate="harga-produk3">$49.99</p>
+                    <p class="rating">★★★★★ (5.0)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+             <!-- produk4 -->
+             <div class="col-md-4">
+                <div class="product-item">
+                    <img src="produk4ka.jpg" class="img-fluid" alt="Koko Shirt">
+                    <h5 data-translate="product4-title">Imported Cool Truck Character Boys Distro T-Shirt 1 - 10 Years - Hypelane Kids - HT2</h5>
+                    <p data-translate="product1-description">Adorable and comfy clothing for your little ones.</p>
+                    <p class="price" data-translate="harga-produk4">$39.99</p>
+                    <p class="rating">★★★★☆ (4.9)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- produk5 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="produk5ka.jpg" class="img-fluid" alt="Shirt">
+                    <h5 data-translate="product5-title">Distro T-Shirt for Boys with One Piece Anime Characters Imported 1 - 10 Years by Hypelane Kids</h5>
+                    <p data-translate="product1-description">Adorable and comfy clothing for your little ones.</p>
+                    <p class="price" data-translate="harga-produk5">$29.99</p>
+                    <p class="rating">★★★★★ (5.0)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <!-- produk6 -->
+            <div class="col-md-4">
+                <div class="product-item">
+                    <img src="produk6ka.jpg" class="img-fluid" alt="Kebaya">
+                    <h5 data-translate="product6-title">one piece t-shirt for all characters</h5>
+                    <p data-translate="product1-description">Adorable and comfy clothing for your little ones.</p>
+                    <p class="price" data-translate="harga-produk6">$49.99</p>
+                    <p class="rating">★★★★☆ (4.8)</p>
+                    <a href="https://wa.me/6283152237614?text=Permisi%20min%20mau%20tanya" target="_blank" data-translate="shop">Shop</a>
+                    <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+       
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2 data-translate="contact-title">Contact Us</h2>
+            <p data-translate="contact-text">Have any questions? Feel free to reach out to us!</p>
+            <a href="tel:+6283152237614">Phone</a>
+            <a href="mailto:bengkelklambimamaaul@gmail.com" data-translate="email">email</a>
+            
+        </div>
+    </section>
+
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="color: black;">&copy; 2024 Bengkel Klambi. All rights reserved.</p>
+            <p>
+                <a href="https://www.facebook.com/maulia.rahman.1420?mibextid=ZbWKwL" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/DeathNo46145706?t=pFdA8w8pWZ1g4fwjyoQ2Qw&s=09" class="text-light"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/aauliarhmn_/" class="text-light"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul id="cart-items" class="list-group">
+                    <!-- Cart items will be dynamically inserted here -->
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let cart = [];
+        const cartIcon = document.getElementById('cart-icon');
+        const cartItems = document.getElementById('cart-items');
+
+        // Update cart count
+        function updateCartCount() {
+            const cartCount = cart.length;
+            cartIcon.querySelector('.badge').textContent = cartCount;
+        }
+
+        // Add item to cart
+        function addToCart(item) {
+            cart.push(item);
+            updateCartCount();
+            renderCartItems();
+        }
+
+        // Render cart items in the modal
+        function renderCartItems() {
+            cartItems.innerHTML = '';
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.textContent = item;
+                const removeButton = document.createElement('button');
+                removeButton.className = 'btn btn-danger btn-sm';
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = () => {
+                    cart.splice(index, 1);
+                    updateCartCount();
+                    renderCartItems();
+                };
+                li.appendChild(removeButton);
+                cartItems.appendChild(li);
+            });
+        }
+
+        // Attach event listeners to "Add to Cart" buttons
+        document.querySelectorAll('.add-to-cart').forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const productName = button.parentElement.querySelector('h5').textContent;
+                addToCart(productName);
+            });
+        });
+
+        // Show cart modal when clicking the cart icon
+        cartIcon.addEventListener('click', () => {
+            $('#cartModal').modal('show');
+        });
+        const translations = {
+            en: {
+                "home": "Home",
+                "about": "About Us",
+                "review": "Review",
+                "products": "Our Products",
+                "contact": "Contact",
+                "cart": "Cart",
+                "login": "Login/Register",
+                "faq": "FAQ",
+                "about-title": "About Us",
+                "about-text": "We are a leading clothing company providing high-quality fashion for all occasions. Our mission is to make you look and feel your best.",
+                "products-title": "Our Products",
+                "product1-title": "RAINBOW SET / SET OF BOYS' CLOTHING SET 1-7 YEARS SUPERH",
+                "product1-description": "Elegant and comfortable casual Shirt, perfect for any occasion.",
+                "product2-title": "Unisex Honey Children's Suit",
+                "product2-description": "Outbox Fashion Unisex Honey Children's Suit",
+                "product3-title": "Special Children's T-shirt Independence 17 August",
+                "product3-description": "Adorable and comfy clothing for your little ones.",
+                "product4-title":"Imported Cool Truck Character Boys Distro T-Shirt 1 - 10 Years - Hypelane Kids - HT2",
+                "product4-description":"ha",
+                "product5-title":"Distro T-Shirt for Boys with One Piece Anime Characters Imported 1 - 10 Years by Hypelane Kids",
+                "product5-descriprion":"ji",
+                "product6-title":"one piece t-shirt for all characters",
+                "product6-description":"ja",
+                "shop": "Shop",
+                "add-to-cart": "Add to Cart",
+                "contact-title": "Contact Us",
+                "contact-text": "Have any questions? Feel free to reach out to us!",
+                "email": "email",
+                "login-title": "Login / Register",
+                "username": "Username",
+                "password": "Password",
+                "login-button": "Login",
+                "best products":"Best Seller",
+                "categories":"Categories",
+                "harga-produk1":"$49.99",
+                "harga-produk2":"$29.99",
+                "harga-produk3":"$49.99",
+                "harga-produk4":"$39.99",
+                "harga-produk5":"$29.99",
+                "harga-produk6":"$49.99", 
+                "products-title": "Our Products",
+                "tj":"Select Language:",
+                "register": "Don't have an account? Register here"
+            },
+            id: {
+                "home": "Beranda",
+                "about": "Tentang Kami",
+                "review": "Ulasan",
+                "products": "Produk",
+                "contact": "Kontak",
+                "cart": "Keranjang",
+                "login": "Masuk/Daftar",
+                "faq": "FAQ",
+                "about-title": "Tentang Kami",
+                "product1-title":"SET PELANGI / SET BAJU ANAK LAKI-LAKI 1-7 TAHUN SUPERH",
+                "product1-description": "Pakaian yang menggemaskan dan nyaman untuk si kecil.",
+                "product2-title": "Setelan Anak Madu Uniseks",
+                "product2-description": "Outbox Fashion Unisex Honey Children's Suit",
+                "product3-title": "Kaos Anak Spesial Kemerdekaan 17 Agustus",
+                "product3-description": "Adorable and comfy clothing for your little ones.",
+                "product4-title":"Kaos Distro Anak Laki Laki Karakter Truck Keren Import 1 - 10 Tahun - Hypelane Kids - HT2",
+                "product4-description":"ha",
+                "product5-title":"Kaos Distro Anak Laki-Laki Karakter Anime One Piece Impor 1 - 10 Tahun by Hypelane Kids",
+                "product5-descriprion":"ji",
+                "product6-title":"kaos one piece untuk semua karakter",
+                "product6-description":"ja",
+                "shop": "Belanja",
+                "add-to-cart": "Tambah ke Keranjang",
+                "contact-title": "Kontak Kami",
+                "contact-text": "Ada pertanyaan? Jangan ragu untuk menghubungi kami!",
+                "email": "email",
+                "phone": "telepon",
+                "login-title": "Masuk / Daftar",
+                "username": "Nama Pengguna",
+                "password": "Kata Sandi",
+                "login-button": "Masuk",
+                "best products":"Terlaris",
+                "categories":"Kategori",
+                "harga-produk1":"$139.900",
+                "harga-produk2":"$199.900",
+                "harga-produk3":"$39.900",
+                "harga-produk4":"$199.900",
+                "harga-produk5":"$139.000",
+                "harga-produk6":"$137.000", 
+                "products-title": "produk kami",
+                "tj":"Pilih Bahasa",
+                "register": "Belum punya akun? Daftar di sini"
+            }
+        };
+
+        document.getElementById('languageSelector').addEventListener('change', function() {
+            const lang = this.value;
+            translatePage(lang);
+        });
+
+        function translatePage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                element.innerText = translations[lang][key] || key;
+            });
+        }
+        const products = [
+    
+        {
+                title: "Unisex Honey Children's Suit",
+                description: "Adorable and comfy clothing for your little ones.",
+                image: "produk2ka.jpg",
+                price: '$29.99',
+                rating: '★★★★☆ (4.7)',
+                link: 'https://shopee.co.id/Outbox-Fashion-Setelan-Anak-Honey-Unisex-i.328392946.22343651260?sp_atk=b4217468-cae7-411d-b75c-da5e520090fb&xptdk=b4217468-cae7-411d-b75c-da5e520090fb',
+            
+            },
+    
+           {
+                title: 'Special Childrens T-shirt Independence 17 August',
+                description: 'Adorable and comfy clothing for your little ones.',
+                image: 'shopee.jpeg',
+                price: '$49.99',
+                rating: '★★★★★ (5.0)',
+                link: 'https://shopee.co.id/Setelan-Roka-Anak-Dan-Kaos-Kemerdekaan-Spesial-17-Agustus-i.1209283541.29505693111?sp_atk=a4006941-fe90-4c1e-ba2c-275f99d33021&xptdk=a4006941-fe90-4c1e-ba2c-275f99d33021',
+           },
+          
+            ];
+            document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const results = products.filter(product => product.title.toLowerCase().includes(query) || product.description.toLowerCase().includes(query));
+            displaySearchResults(results);
+        });
+        function displaySearchResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = '';
+            if (results.length > 0) {
+                results.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product-item');
+                    productElement.innerHTML = `
+                        <img src="${product.image}" alt="${product.title}">
+                        <h5>${product.title}</h5>
+                        <p>${product.description}</p>
+                        <p>${product.price}</p>
+                        <p>${product.rating}</p>
+                        <a href="${product.link}" target="_blank">Shop</a>
+                        <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                    `;
+                    resultsContainer.appendChild(productElement);
+                });
+            } else {
+                resultsContainer.innerHTML = '<p>No results found</p>';
+            }
+        }
+
+    </script>
+</body>
+</html>

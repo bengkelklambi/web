@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Baju - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Style untuk kategori dengan ikon */
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+        .category-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+        .category-item:hover {
+            background-color: #f8f9fa;
+        }
+        .category-item .icon {
+            font-size: 3rem;
+            color: #007bff;
+            padding: 15px;
+            border-right: 1px solid #ddd;
+            flex-shrink: 0;
+        }
+        .category-item .category-text {
+            padding: 10px;
+            flex: 1;
+        }
+        .category-item .category-text h5 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .search-results {
+            margin-top: 20px;
+        }
+        .navbar-brand img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        .navbar {
+            background-color: #A2CA71;
+            color: cyan;
+        }
+        .navbar .badge {
+            background-color: #A2CA71;
+            color: black;
+        }
+        .footer {
+            background-color: #A2CA71;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        body {
+            background-color: wheat;
+            margin: 0;
+            padding: 0;
+        }
+        .search-bar {
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: black;">
+                <img src="Bengkel Klambi.jpg" alt="Logo"> Bengkel Klambi Shop
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                   
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html"><i class="fas fa-home" style="color: black;"></i> <span data-translate="home" style="color: black;">Home</span></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" style="color: black;" data-translate="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html" style="color: black;" data-translate="best products">Best Seller</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html" style="color: black;" data-translate="faq">FAQ</a>
+                    </li>
+                    
+                    
+                    <!-- Language Selector -->
+      <!-- Language Selector -->
+    <div class="container text-center language-selector">
+        <label for="languageSelector" style="color: black;"data-translate="tj">Select Language:</label>
+        <select id="languageSelector" class="form-control w-50 mx-auto">
+            <option value="en">English</option>
+            <option value="id">Bahasa Indonesia</option>
+        </select>
+    </div> 
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Search Bar -->
+    <div class="container search-bar">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search for products...">
+        <div id="searchResults" class="mt-3"></div>
+    </div>
+
+   <!-- Main Content -->
+<div class="container mt-5" >
+    <div class="row">
+            <!-- Sidebar Categories -->
+            <div class="row">
+                <!-- Sidebar Categories -->
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <h4 class="list-group-item list-group-item-action active"id="categories"><span data-translate="categories">Categories</span></h4>
+                        <a  href="casual.html" class="list-group-item list-group-item-action"><i class="fas fa-tshirt icon"></i>Shirt</a>
+                        <a  href="Kkoko.html" class="list-group-item list-group-item-action"><i class="fas fa-tshirt icon"></i>Koko Shirt</a>
+                        <a  href="Kanak.html" class="list-group-item list-group-item-action"><i class="fas fa-baby icon"></i> Children's Clothing</a>
+                        <!-- Add more categories as needed -->
+                    </div>
+                </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9">
+               
+                <h1 href="Welcome to Our Categories"><span data-translate="Welcome to Our Categories">Welcome to Our Categories</span></h1>
+                <p data-translate="browse"> you can browse our different clothing categories.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+     <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="color: black;">&copy; 2024 Bengkel Klambi. All rights reserved.</p>
+            <p>
+                <a href="https://www.facebook.com/maulia.rahman.1420?mibextid=ZbWKwL" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/DeathNo46145706?t=pFdA8w8pWZ1g4fwjyoQ2Qw&s=09" class="text-light"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/aauliarhmn_/" class="text-light"><i class="fab fa-instagram"></i></a>
+</p>
+</div>
+    </footer>
+
+     
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script>
+       const translations = {
+        en: {
+            "home": "Home",
+            "about": "About Us",
+            "review": "Review",
+            "products": "Products",
+            "contact": "Contact",
+            "cart": "Cart",
+            "login": "Login/Register",
+            "faq": "FAQ",
+            "about-title": "About Us",
+            "about-text": "We are a leading clothing company providing high-quality fashion for all occasions. Our mission is to make you look and feel your best.",
+            "products-title": "Our Products",
+            "product1-title": "Koko Shirt",
+            "product1-description": "Elegant and comfortable Koko Shirt, perfect for any occasion.",
+            "product2-title": "Shirt",
+            "product2-description": "Classic and versatile shirt for your everyday style.",
+            "product3-title": "Children's Clothing",
+            "product3-description": "Adorable and comfy clothing for your little ones.",
+            "shop": "Shop",
+            "add-to-cart": "Add to Cart",
+            "contact-title": "Contact Us",
+            "contact-text": "Have any questions? Feel free to reach out to us!",
+            "email": "email",
+            "login-title": "Login / Register",
+            "username": "Username",
+            "password": "Password",
+            "login-button": "Login",
+            "register": "Don't have an account? Register here",
+            "Our Categories":"Our Categories",
+            "Koko Shirt":"Koko Shirt",            
+            "koko":"Koko Shirt",
+            "kemeja":"Shirt",
+            "anak":"Children's Clothing",
+            "best products":"Best Seller",
+            "categories":"Categories",
+          "Welcome to Our Categories":"Welcome to Our Categories",
+          "browse":"you can browse our different clothing categories.",
+          "tj":"Select Language:",
+            "Children's Clothing":"Children's Clothing"
+            
+        },
+        id: {
+            "home": "Beranda",
+            "about": "Tentang Kami",
+            "review": "Ulasan",
+            "products": "Produk",
+            "contact": "Kontak",
+            "cart": "Keranjang",
+            "login": "Masuk/Daftar",
+            "faq": "FAQ",
+            "about-title": "Tentang Kami",
+            "about-text": "Kami adalah perusahaan pakaian terkemuka yang menyediakan mode berkualitas tinggi untuk segala kesempatan. Misi kami adalah membuat Anda terlihat dan merasa yang terbaik.",
+            "products-title": "Produk Kami",
+           "Product1-title":"koko",
+            "product1-description": "Koko Shirt yang elegan dan nyaman, sempurna untuk setiap kesempatan.",
+            "Product2-title":"kemeja",
+            "product2-description": "Kemeja klasik dan serbaguna untuk gaya sehari-hari Anda.",
+            "Product3-title":"pakaian anak",
+            "product3-description": "Pakaian yang menggemaskan dan nyaman untuk si kecil.",
+            "shop": "Belanja",
+            "add-to-cart": "Tambah ke Keranjang",
+            "contact-title": "Kontak Kami",
+            "contact-text": "Ada pertanyaan? Jangan ragu untuk menghubungi kami!",
+            "email": "email",
+            "phone": "telepon",
+            "login-title": "Masuk / Daftar",
+            "username": "Nama Pengguna",
+            "password": "Kata Sandi",
+            "login-button": "Masuk",
+            "best products":"Terlaris",
+            "categories":"Kategori",
+            "Welcome to Our Categories":"selamat datang di Kategori",
+            "koko":"Koko",
+            "kemeja":"kemeja",
+            "anak":"pakaian anak",
+            "browse":"kamu bisa mencari kategori pakaian yang berbeda",
+           "tj":"Pilih Bahasa:",
+            "register": "Belum punya akun? Daftar di sini"
+        }
+    };
+
+    document.getElementById('languageSelector').addEventListener('change', function() {
+        const lang = this.value;
+        translatePage(lang);
+    });
+
+    function translatePage(lang) {
+        const elements = document.querySelectorAll('[data-translate]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            element.innerText = translations[lang][key] || key;
+        }); }
+        const products = [
+    
+        {
+                title: "Unisex Honey Children's Suit",
+                description: "Adorable and comfy clothing for your little ones.",
+                image: "produk2ka.jpg",
+                price: '$29.99',
+                rating: '★★★★☆ (4.7)',
+                link: 'https://shopee.co.id/Outbox-Fashion-Setelan-Anak-Honey-Unisex-i.328392946.22343651260?sp_atk=b4217468-cae7-411d-b75c-da5e520090fb&xptdk=b4217468-cae7-411d-b75c-da5e520090fb',
+            
+            },
+    
+           {
+                title: 'Special Childrens T-shirt Independence 17 August',
+                description: 'Adorable and comfy clothing for your little ones.',
+                image: 'shopee.jpeg',
+                price: '$49.99',
+                rating: '★★★★★ (5.0)',
+                link: 'https://shopee.co.id/Setelan-Roka-Anak-Dan-Kaos-Kemerdekaan-Spesial-17-Agustus-i.1209283541.29505693111?sp_atk=a4006941-fe90-4c1e-ba2c-275f99d33021&xptdk=a4006941-fe90-4c1e-ba2c-275f99d33021',
+           },
+          
+            ];
+            document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const results = products.filter(product => product.title.toLowerCase().includes(query) || product.description.toLowerCase().includes(query));
+            displaySearchResults(results);
+        });
+        function displaySearchResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = '';
+            if (results.length > 0) {
+                results.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product-item');
+                    productElement.innerHTML = `
+                        <img src="${product.image}" alt="${product.title}">
+                        <h5>${product.title}</h5>
+                        <p>${product.description}</p>
+                        <p>${product.price}</p>
+                        <p>${product.rating}</p>
+                        <a href="${product.link}" target="_blank">Shop</a>
+                        <button class="btn btn-primary add-to-cart" data-translate="add-to-cart">Add to Cart</button>
+                    `;
+                    resultsContainer.appendChild(productElement);
+                });
+            } else {
+                resultsContainer.innerHTML = '<p>No results found</p>';
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

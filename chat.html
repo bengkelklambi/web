@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengkel Klambi Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9f7ca;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 400px;
+            background-color: #f5f0e3;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 80vh; /* Tinggi container diatur agar chat box tidak menyembunyikan header */
+        }
+
+        .chat-header {
+            background-color: #A2CA71;
+            color: #fff;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .chat-header img.home-icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 16px;
+            cursor: pointer;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .chat-header img.logo {
+            width: 50px;
+            height: auto;
+            margin-right: 16px;
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            background-color: #e5ddd5;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .sent {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+            border-top-right-radius: 0;
+           
+        }
+
+        .received {
+            background-color: #fff;
+            align-self: flex-start;
+            border-top-left-radius: 0;
+           
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 16px;
+            background-color: #A2CA71;
+            flex-shrink: 0;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        .chat-input button {
+            padding: 10px 20px;
+            background-color: #6e8d49;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #5b7738;
+        }
+
+        .faq-options {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            display: none;
+        }
+
+        .faq-options li {
+            margin: 5px 0;
+            padding: 8px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .faq-options li:hover {
+            background-color: #0056b3;
+        }
+
+        .toggle-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 14px;
+        }
+
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+
+        .clear-chat {
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px;
+        }
+
+        .clear-chat:hover {
+            background-color: #d94c4c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <a href="index.html">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/home.png" alt="Home Icon" class="home-icon">
+            </a>
+            <h3>Bengkel Klambi Shop</h3>
+            <img src="Bengkel Klambi.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="chat-box" id="chat-box">
+            <!-- Pesan awal yang akan muncul saat pertama kali -->
+            <div class="chat-message received">Hai! Aku chatbot produk. Mau tanya apa tentang produk kami?</div>
+        </div>
+        <button class="toggle-button" id="toggle-faq">Tanya Kami</button>
+        <button class="clear-chat" id="clear-chat">Hapus Chat</button>
+        <ul class="faq-options" id="faq-options">
+            <li onclick="selectQuestion('gimana cara pesennya min?')">Cara Pesen?</li>
+            <li onclick="selectQuestion('cara pembayarannya gimana min?')">Cara Bayar?</li>
+            <li onclick="selectQuestion('kira-kira berapa lama pengirimannya min?')">Waktu Kirim?</li>
+            <li onclick="selectQuestion('ada garansinya gak min?')">Garansi?</li>
+            <li onclick="selectQuestion('disini jual apa aja min?')">Produk Kita?</li>
+            <li onclick="selectQuestion('ada kemeja gak min?')">Kemeja Tersedia?</li>
+            <li onclick="selectQuestion('ada koko gak min?')">Koko Tersedia?</li>
+            <li onclick="selectQuestion('ada pakaian anak gak min?')">Pakaian Anak?</li>
+        </ul>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Ketik pertanyaanmu di sini...">
+            <button id="send-btn">Kirim</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("send-btn").addEventListener("click", function () {
+            sendMessage();
+        });
+
+        document.getElementById("message-input").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Mencegah input baris baru saat menekan Enter
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const messageInput = document.getElementById("message-input");
+            const message = messageInput.value.trim();
+
+            if (message !== "") {
+                addMessage(message, "sent");
+                messageInput.value = "";
+                setTimeout(function () {
+                    const reply = getReply(message);
+                    addMessage(reply, "received");
+                }, 1000);
+            }
+        }
+
+        document.getElementById("clear-chat").addEventListener("click", function () {
+            const chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML = '';
+            addMessage("Hai! Aku chatbot produk. Mau tanya apa tentang produk kami?", "received");
+        });
+
+        function addMessage(text, type) {
+            const chatBox = document.getElementById("chat-box");
+            const messageElement = document.createElement("div");
+            messageElement.classList.add("chat-message", type);
+            messageElement.innerText = text;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function getReply(message) {
+            const faq = {
+                "gimana cara pesennya min?": "Untuk pesen, tinggal kunjungi halaman produk dan pilih barang yang mau dibeli.",
+                "cara pembayarannya gimana min?": "Kamu bisa bayar lewat transfer bank, kartu kredit, atau metode pembayaran digital lainnya.",
+                "kira-kira berapa lama pengirimannya min?": "Pengiriman biasanya antara 3-7 hari kerja, tergantung lokasi.",
+                "ada garansinya gak min?": "Iya, semua produk kami ada garansi 1 tahun.",
+                "disini jual apa aja min?": "Kita jual kemeja, koko, dan pakaian anak.",
+                "ada kemeja gak min?": "Kemeja ada dan bisa dipilih di halaman produk.",
+                "ada koko gak min?": "Koko tersedia. Cek halaman produk untuk ukuran dan warna.",
+                "ada pakaian anak gak min?": "Ada berbagai desain pakaian anak. Lihat di halaman produk kami."
+            };
+
+            const reply = faq[message.toLowerCase()] || "Maaf, aku gak ngerti pertanyaanmu. Coba tanya yang lain.";
+            return reply;
+        }
+
+        function selectQuestion(question) {
+            addMessage(question, 'sent');
+            const reply = getReply(question);
+            setTimeout(() => {
+                addMessage(reply, 'received');
+            }, 1000);
+        }
+
+        document.getElementById("toggle-faq").addEventListener("click", function () {
+            const faqOptions = document.getElementById("faq-options");
+            if (faqOptions.style.display === "none" || faqOptions.style.display === "") {
+                faqOptions.style.display = "block";
+                this.innerText = "Sembunyikan";
+            } else {
+                faqOptions.style.display = "none";
+                this.innerText = "Tanya Kami";
+            }
+        });
+    </script>
+</body>
+
+</html>
